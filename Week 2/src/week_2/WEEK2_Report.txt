@@ -1,0 +1,32 @@
+1. Introduction & DINO Architecture
+Self-Supervised Learning (SSL) has revolutionized computer vision by enabling neural networks to learn powerful visual representations from unlabeled data. 
+DINO (Self-Distillation with No Labels) introduces a self-distillation framework built on a Student-Teacher architecture using Vision Transformers (ViTs).   
+Unlike traditional contrastive learning methods that rely heavily on negative pairs, DINO frames representation learning purely as a cross-entropy loss matching problem between two networks processing different views of the same image:
+Student Network ($g_\theta$): Actively learns via standard backpropagation, processing both global (large) and local (small) crops.   
+Teacher Network ($g_\xi$): Generates target distributions. It does not receive gradient updates via backpropagation; instead, its weights are updated smoothly using an Exponential Moving Average (EMA) of the student's weights. 
+
+2. Core Mechanisms Implemented
+A. Multi-Crop AugmentationTo prevent the model from learning trivial shortcuts and to enforce local-to-global semantic consistency, we implemented a multi-crop pipeline generating:2 Global Views ($32 \times 32$ pixels):
+ Capturing dominant objects and overall scene context, processed by both the student and the teacher.   4 Local Views ($16 \times 16$ pixels): Zooming into sub-parts of the image, 
+processed exclusively by the student network to force fine-grained semantic alignment. 
+
+B. Anti-Collapse Safeguards: 
+Centering & SharpeningSelf-supervised vision models are notoriously prone to "model collapse," where the network collapses into a trivial solution by outputting a constant vector for all inputs.
+DINO solves this stability challenge using two primary mechanisms:Teacher Sharpening: Dividing teacher logits by a low temperature parameter ($\tau_t = 0.04$) to peak the probability distribution and increase confidence.  
+Center Biasing: Adding a moving-average center vector to the teacher's outputs, which prevents any single feature dimension from dominating the representation space.   
+
+C. Momentum Teacher Update (EMA)
+The teacher network is updated dynamically after every training step via an Exponential Moving Average of the student weights ($\xi \leftarrow m\xi + (1-m)\theta$), with momentum $m = 0.996$. 
+This provides a slowly evolving, stable target for the student network to track
+
+3. Experimental Setup & ResultsTo demonstrate feasibility on free GPU resources (Colab/Kaggle T4),
+the experiment was executed under the following constraints:Dataset: CIFAR-10 subset restricted to 2,000 images to accelerate iterations.  
+Backbone: TinyViT configuration ($32 \times 32$ input, patch size 4, 4 transformer layers, 4 attention heads, embedding dimension 192).
+Optimization: 
+AdamW optimizer with learning rate $0.0005$, weight decay $0.04$, trained for 10 epochs.
+
+Quantitative ObservationsTraining Loss Convergence: 
+The DINO cross-entropy loss steadily converged and stabilized around ~3.7, indicating successful alignment between student and teacher probability distributions across multi-crop views.
+Embedding Cluster Quality (t-SNE): Visualizing the extracted [CLS] token representations using t-SNE demonstrated clear emergent clustering of semantically similar CIFAR-10 object categories, even without supervision or labels.  
+Attention Map Emergence: Visualizing self-attention weights from the final Transformer layer revealed that the [CLS] token naturally learned to focus on core object shapes and boundaries rather than background noise. 
+
