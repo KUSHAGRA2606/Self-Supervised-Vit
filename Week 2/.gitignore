@@ -5,6 +5,10 @@ build/
 dist/
 wheels/
 *.egg-info
-
+# Datasets and raw data archives
+Week 2/data/
+*.tar.gz
+*.zip
+*.rar
 # Virtual environments
 .venv
