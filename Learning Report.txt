@@ -1,0 +1,36 @@
+Why Vit??
+CNNs use convolutions. They cannot be used for long range object boundaries, without explicit pixel wise labels. 
+Vision Transformers on the otherhand, process image by splitting it into patches and use multi head self attention mechanism.
+CNNs suffer from very high inductive bias (they only focus on local pixels), however  large-scalestructures are oversegmented or missed.
+Vision Transformers can capture long range dependencies very efficiently as every patch can attend every other patch.
+CNN features are often heavily low-level spatial statistics while ViT when trained with DINO, can capture high level semantic layouts and geometric properties, making them exceptionally powerful for downstream tasks like linear probing (predicting Galaxy Zoo morphologies) and t-SNE clustering right out of the box.
+
+How image patchification works?
+Patchification is analogous to Tokenization of sentences.
+First it slices into non overlapping patches, then it flattens every vector to transformer's embedding space via linear layer. The projected vectors are called patch tokens
+An additional classification token is added and positional embedding is done to the patch tokens so model knows the overall layout.
+
+Patch embeddings
+The raw pixel values are multiplied by the embedding matrix, to get the patch embeddings, hence we get the learnable projection.
+
+Positional embeddings
+Since the self attention mechanism computes the relationships between tokens simultaneously, it must know the spatial arrangement of the data. Otherwise it ignores that.
+The positional embedding tensor has the exact same shape as the token sequence,and are learnable parameters initialized during training.
+
+CLS token
+Classification token determines how our model summarises and represents the entire image. 
+Global Image Embeddings: For downstream tasks like t-SNE clustering, PCA projections, and linear probing (predicting Galaxy Zoo morphological classes), you don't use the 100 individual patch vectors. Instead, you extract the final [CLS] token vector as a compact, high-level semantic fingerprint of the entire galaxy.
+Unsupervised Attention Maps: In DINO-trained models, the attention weights flowing from the [CLS] token to all other patch tokens in the final transformer layer are what you hook into to generate your unsupervised segmentation heatmaps. It literally tells you which parts of the galaxy the model "focused" on to understand its global structure.
+
+ViT Transformer architecture
+After all the above steps, we pass the resulting sequence of vectors to a ViT.
+It involves Multi-Head Self Attention, where every patch token to relate to every other. We have the Q,K,V. Each head focuses on different mechanism.
+It contains the layer normto stabilize training gradients, Residual addition prevents gradient vanishing and allows deep networks to retain low-level spatial details while learning high-level semantics.
+After self-attention, the tokens pass through an MLP block consisting of two linear layers with a non-linear activation function (typically GELU) in between.
+
+CLS vs patch tokens
+CLS is classification token which is an artificial token that initially doesn't contain any information but acts as a global aggregator to summarize an entire vector
+When you want to embed all 17,736 galaxies into a 2D space using t-SNE or train a linear probe to classify Galaxy Zoo morphologies, you throw away the 100 individual patch vectors and only use the final [CLS] token vector. It acts as the ultimate summary fingerprint of the galaxy.
+
+What DINOv2 is
+DINO stands for Self-DIstillation with NO labels.
