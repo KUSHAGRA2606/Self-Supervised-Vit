@@ -1,0 +1,25 @@
+{
+  "feature": "cls_L11",
+  "probe": "Linear",
+  "selection": "validation accuracy, macro F1 tie break",
+  "seed": 42,
+  "manifest": {
+    "dataset": "MultimodalUniverse/gz10",
+    "revision": "eed0f087b8e3eb3316d303a8244199c2667d46fb",
+    "fingerprint": "bf8081e627b7c4da",
+    "model": "dinov2_vits14",
+    "hub_revision": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "n": 17736,
+    "layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "size": 224,
+    "resize": "bicubic",
+    "normalization": "ImageNet",
+    "dtype": "float16",
+    "save_patch_tokens": true
+  }
+}
