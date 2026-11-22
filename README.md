@@ -123,10 +123,10 @@ The assignment cites approximately **67% accuracy for ViT-S/14** and **73% for V
 
 Week 4 uses a frozen 70/10/20 split of 3,000 DESI cutouts and creates three-class photutils masks. The segmentation notebook compares the Week 3 attention baseline, Linear DINOv2 heads at 224 and 448, Linear DINO ViT-S/8, and +ms with and without test-time augmentation. Checkpoints are selected on validation mIoU.
 
-- [Week 4 run order and outputs](Week-4/README.md)
-- [Pseudo-label notebook](Week-4/Week4_Pseudo_Labels.ipynb)
-- [Segmentation notebook](Week-4/Week4_Segmentation_Heads.ipynb)
-- [Week 4 report](Week-4/Week4_Report.pdf)
+- [Week 4 run order and outputs](Week4/README.md)
+- [Pseudo-label notebook](Week4/Week4_Pseudo_Labels.ipynb)
+- [Segmentation notebook](Week4/Week4_Segmentation_Heads.ipynb)
+- [Week 4 report](Week4/Week4_Report.pdf)
 
 In the 20-image CPU pilot, target IoU against pseudo-labels was 0.085 for attention, 0.192 for Linear at 224, and 0.418 for +ms with TTA. The full trained-head comparison is pending.
 
@@ -134,11 +134,11 @@ In the 20-image CPU pilot, target IoU against pseudo-labels was 0.085 for attent
 
 Week 5 adds BTK DES-like blends with simulated ownership and fluxes, a fixed 100-image real annotation set, and shared IoU and Hungarian instance matching. The benchmark evaluates photutils, attention, the Week 4 heads, and a Linear head trained on simulated data.
 
-- [Week 5 run order and outputs](Week-5/README.md)
-- [BTK simulation notebook](Week-5/Week5_BTK_Simulations.ipynb)
-- [Real annotation guide](Week-5/labelling_guide.md)
-- [Benchmark notebook](Week-5/Week5_Benchmark.ipynb)
-- [Week 5 report](Week-5/Week5_Report.pdf)
+- [Week 5 run order and outputs](Week5/README.md)
+- [BTK simulation notebook](Week5/Week5_BTK_Simulations.ipynb)
+- [Real annotation guide](Week5/labelling_guide.md)
+- [Benchmark notebook](Week5/Week5_Benchmark.ipynb)
+- [Week 5 report](Week5/Week5_Report.pdf)
 
 Photutils measured 0.461 mIoU and 0.314 target IoU on the 1,000 simulated test images. The real cutouts are ready for primary and repeat annotation. Real-set scores and agreement depend on those exports.
 
