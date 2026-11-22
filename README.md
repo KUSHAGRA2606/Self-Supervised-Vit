@@ -113,11 +113,34 @@ The notebooks implement the attention and probing workflows. Running them genera
 - Per-class metrics and confusion matrices
 - t-SNE plots and a measured-results summary
 
-**Week 3 execution and measured findings are pending.** The current report describes the methods and evaluation protocol; it does not claim a winning layer, measured morphology accuracy, or an observed advantage of registers.
+**The committed Week 3 [probe results](Week3/Results/probe_results/measured_summary.md) select the layer 11 CLS Linear probe on validation. On the 3,548-image test split it measured 69.05% accuracy, 65.25% balanced accuracy, and 0.656 macro F1. The attention visualizations and arrays are in [Week 3 attention results](Week3/Results/attention_results/).
 
 The assignment cites approximately **67% accuracy for ViT-S/14** and **73% for ViT-L/14** with an MLP on CLS embeddings. These are reference values, not results obtained in this project. The current probe notebook evaluates **ViT-S/14**.
 
 **Interpretation:** Attention maps and thresholded masks are qualitative diagnostics. Segmentation accuracy requires ground-truth masks and suitable metrics; attention alone does not establish object or part discovery.
+
+## Week 4 — First Segmentation Models
+
+Week 4 uses a frozen 70/10/20 split of 3,000 DESI cutouts and creates three-class photutils masks. The segmentation notebook compares the Week 3 attention baseline, Linear DINOv2 heads at 224 and 448, Linear DINO ViT-S/8, and +ms with and without test-time augmentation. Checkpoints are selected on validation mIoU.
+
+- [Week 4 run order and outputs](Week-4/README.md)
+- [Pseudo-label notebook](Week-4/Week4_Pseudo_Labels.ipynb)
+- [Segmentation notebook](Week-4/Week4_Segmentation_Heads.ipynb)
+- [Week 4 report](Week-4/Week4_Report.pdf)
+
+In the 20-image CPU pilot, target IoU against pseudo-labels was 0.085 for attention, 0.192 for Linear at 224, and 0.418 for +ms with TTA. The full trained-head comparison is pending.
+
+## Week 5 — Ground Truth and Evaluation Benchmark
+
+Week 5 adds BTK DES-like blends with simulated ownership and fluxes, a fixed 100-image real annotation set, and shared IoU and Hungarian instance matching. The benchmark evaluates photutils, attention, the Week 4 heads, and a Linear head trained on simulated data.
+
+- [Week 5 run order and outputs](Week-5/README.md)
+- [BTK simulation notebook](Week-5/Week5_BTK_Simulations.ipynb)
+- [Real annotation guide](Week-5/labelling_guide.md)
+- [Benchmark notebook](Week-5/Week5_Benchmark.ipynb)
+- [Week 5 report](Week-5/Week5_Report.pdf)
+
+Photutils measured 0.461 mIoU and 0.314 target IoU on the 1,000 simulated test images. The real cutouts are ready for primary and repeat annotation. Real-set scores and agreement depend on those exports.
 
 ## Running the Notebooks
 
@@ -125,7 +148,8 @@ The assignment cites approximately **67% accuracy for ViT-S/14** and **73% for V
 2. Select a **GPU runtime**, such as a T4.
 3. Run the cells in order, including dependency installation where provided.
 4. For Week 3, set `USE_DRIVE = True` to preserve caches and results across Colab sessions.
-5. Download generated outputs before ending the runtime if using temporary storage.
+5. For Weeks 4 and 5, clone the repository in Colab, set the working directory to the clone, and follow each week’s run order.
+6. Download generated outputs before ending the runtime if using temporary storage.
 
 Full Week 3 patch-token caching uses approximately **14 GB**, in addition to dataset and model storage. Setting `SAVE_PATCH_TOKENS = False` reduces storage while retaining the six probe feature sets, but omits the assignment's full patch-token cache. Use `MAX_IMAGES` only for a small smoke run; keep it at `None` for the full-catalog experiment.
 
@@ -133,4 +157,4 @@ Full Week 3 patch-token caching uses approximately **14 GB**, in addition to dat
 
 The current stages establish pretrained feature extraction, a small self-supervised training implementation, and tools for attention analysis and morphology evaluation.
 
-The next step is to run the Week 3 experiments, inspect their outputs, and update the report with measured findings. Those findings will guide later work on **unsupervised object and part discovery**, particularly the challenges of blended sources, fragmented detections, and faint galaxy structure.
+The next measurement is the full segmentation-head comparison against the fixed Week 4 test split and the Week 5 simulated and annotated test sets. Those results will guide later work on blended sources, fragmented detections, and faint galaxy structure.
