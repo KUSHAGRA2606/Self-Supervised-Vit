@@ -1,0 +1,7 @@
+{
+  "dataset": "Week 4 20-image diagnostic hard set",
+  "method": "naive",
+  "n_images": 20,
+  "target_iou": 0.0848296349789916,
+  "all_sources_iou": 0.45178322158815576
+}

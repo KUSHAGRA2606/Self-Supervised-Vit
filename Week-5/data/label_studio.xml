@@ -1,0 +1,8 @@
+<View>
+  <Image name="image" value="$image" zoom="true"/>
+  <PolygonLabels name="objects" toName="image">
+    <Label value="Target galaxy" background="#ffc107"/>
+    <Label value="Other galaxy" background="#2979ff"/>
+    <Label value="Star" background="#e040fb"/>
+  </PolygonLabels>
+</View>

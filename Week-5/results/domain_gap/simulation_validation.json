@@ -1,0 +1,23 @@
+{
+  "train": {
+    "archives": 3600,
+    "encoded_bytes": 763604145,
+    "target_below_ownership_threshold": 38,
+    "count": 3600,
+    "seed": 42
+  },
+  "validation": {
+    "archives": 400,
+    "encoded_bytes": 84904447,
+    "target_below_ownership_threshold": 8,
+    "count": 400,
+    "seed": 43
+  },
+  "test": {
+    "archives": 1000,
+    "encoded_bytes": 212025404,
+    "target_below_ownership_threshold": 10,
+    "count": 1000,
+    "seed": 52
+  }
+}

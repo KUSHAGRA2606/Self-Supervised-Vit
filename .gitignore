@@ -1,0 +1,11 @@
+__pycache__/
+.ipynb_checkpoints/
+Week-4/data/cutouts/
+Week-4/results/features/
+Week-4/results/checkpoints/
+Week-4/results/predictions/*.npz
+Week-4/results/pseudo_labels/*.npy
+Week-5/data/sim/
+Week-5/data/real/
+Week-5/data/*.fits
+Week-5/results/checkpoints/

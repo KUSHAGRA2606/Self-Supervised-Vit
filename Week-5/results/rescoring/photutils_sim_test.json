@@ -1,0 +1,18 @@
+{
+  "method": "photutils",
+  "dataset": "BTK simulated test",
+  "seed": 52,
+  "n_images": 1000,
+  "expected_images": 1000,
+  "encoding": "scaled float16",
+  "class_iou": [
+    0.9614052144071447,
+    0.31432723665733375,
+    0.10785819097274453
+  ],
+  "miou": 0.4611968806790743,
+  "target_iou": 0.31432723665733375,
+  "target_split": 24,
+  "target_merged": 326,
+  "missing_target": 226
+}

@@ -1,0 +1,17 @@
+{
+  "catalog_revision": "6901e8ce5d2d3f19bf5e1b7463e26332fce816fd",
+  "catalog_path": "data/input_catalog.fits",
+  "btk_version": "1.0.9",
+  "survey": "DES",
+  "bands": "griz",
+  "stamp_pixels": 160,
+  "r_magnitude_limit": 23.5,
+  "galaxies_per_blend": [1, 4],
+  "batch_size": 16,
+  "workers": 4,
+  "splits": {
+    "train": {"count": 3600, "seed": 42},
+    "validation": {"count": 400, "seed": 43},
+    "test": {"count": 1000, "seed": 52}
+  }
+}

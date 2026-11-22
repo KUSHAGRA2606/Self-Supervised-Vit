@@ -1,0 +1,4 @@
+dataset,method,n_images,miou,target_iou,all_sources_iou
+Week 4 pseudo-label test split,naive,600,,0.06316171549614759,0.3013788697033084
+BTK simulated test,photutils,1000,0.4611968806790743,0.31432723665733375,
+BTK simulated test,naive,1000,,0.012123056467637412,0.0305623921658731

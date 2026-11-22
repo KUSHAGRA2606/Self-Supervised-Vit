@@ -1,0 +1,7 @@
+{
+  "dataset": "Week 4 pseudo-label test split",
+  "method": "naive",
+  "n_images": 600,
+  "target_iou": 0.06316171549614759,
+  "all_sources_iou": 0.3013788697033084
+}

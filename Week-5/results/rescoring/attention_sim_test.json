@@ -1,0 +1,7 @@
+{
+  "dataset": "BTK simulated test",
+  "method": "naive",
+  "n_images": 1000,
+  "target_iou": 0.012123056467637412,
+  "all_sources_iou": 0.0305623921658731
+}
