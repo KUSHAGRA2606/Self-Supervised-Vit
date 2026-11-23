@@ -1,0 +1,14 @@
+{
+  "n_images": 17736,
+  "n_classes": 10,
+  "split_seed": 42,
+  "train_n": 14188,
+  "test_n": 3548,
+  "best_feature_set": "CLS L11",
+  "best_probe": "Logistic regression",
+  "best_accuracy": 0.6922209695603156,
+  "best_macro_f1": 0.6560740228378856,
+  "paper_vits14_accuracy_reference": 0.67,
+  "paper_vitl14_accuracy_reference": 0.73,
+  "note": "Compare only if label definition, split, and metric match the paper."
+}

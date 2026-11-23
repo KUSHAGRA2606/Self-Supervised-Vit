@@ -1,0 +1,11 @@
+class_id,class,count,fraction
+0,Disturbed,1081,0.060949
+1,Merging,1853,0.104477
+2,Round Smooth,2645,0.149132
+3,In-between Round Smooth,2027,0.114287
+4,Cigar Shaped Smooth,334,0.018832
+5,Barred Spiral,2043,0.115189
+6,Unbarred Tight Spiral,1829,0.103124
+7,Unbarred Loose Spiral,2628,0.148173
+8,Edge-on without Bulge,1423,0.080232
+9,Edge-on with Bulge,1873,0.105604

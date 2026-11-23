@@ -1,0 +1,13 @@
+feature_set,probe,accuracy,macro_f1
+CLS L11,Logistic regression,69.222%,65.607%
+CLS L12,Logistic regression,68.968%,65.860%
+Concat CLS L9-L12,MLP,68.828%,66.438%
+Concat CLS L9-L12,Logistic regression,68.799%,65.271%
+CLS L10,Logistic regression,67.475%,64.130%
+CLS L9,Logistic regression,67.334%,63.462%
+CLS L11,MLP,66.488%,63.506%
+Mean-patch L12,Logistic regression,66.263%,63.079%
+CLS L12,MLP,65.840%,63.877%
+CLS L9,MLP,64.797%,62.083%
+CLS L10,MLP,63.585%,59.728%
+Mean-patch L12,MLP,62.965%,60.585%

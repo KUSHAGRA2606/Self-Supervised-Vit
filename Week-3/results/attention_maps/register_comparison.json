@@ -1,0 +1,8 @@
+{
+  "base_registers": 0,
+  "register_model_registers": 4,
+  "base_peak_mass_fraction_mean": 0.07102394104003906,
+  "register_peak_mass_fraction_mean": 0.0915796086192131,
+  "base_peak_mass_fraction_median": 0.059611037373542786,
+  "register_peak_mass_fraction_median": 0.07359760999679565
+}
