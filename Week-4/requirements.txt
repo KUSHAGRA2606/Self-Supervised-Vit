@@ -1,0 +1,8 @@
+datasets
+photutils
+astropy
+scipy
+pillow
+matplotlib
+pandas
+reportlab

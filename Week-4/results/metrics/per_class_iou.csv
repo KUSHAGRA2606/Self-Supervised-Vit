@@ -1,0 +1,13 @@
+setting,class,IoU
+linear_dinov2_s14_224,background,0.9002317220319053
+linear_dinov2_s14_224,target_galaxy,0.5458073231395322
+linear_dinov2_s14_224,other_sources,0.39105589671342517
+linear_dinov2_s14_448,background,0.9155295118996027
+linear_dinov2_s14_448,target_galaxy,0.584508319100691
+linear_dinov2_s14_448,other_sources,0.445797390918389
+linear_dino_s8_224,background,0.9153016231437718
+linear_dino_s8_224,target_galaxy,0.5995123859130586
+linear_dino_s8_224,other_sources,0.4819432598243007
+plus_ms_tta,background,0.9310356985254837
+plus_ms_tta,target_galaxy,0.5928263723097795
+plus_ms_tta,other_sources,0.5252217854147334

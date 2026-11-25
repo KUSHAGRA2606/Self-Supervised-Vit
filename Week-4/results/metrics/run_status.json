@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "n_images": 3000,
+  "n_valid_masks": 3000,
+  "n_test": 600,
+  "test_fraction": 0.2,
+  "metrics": "test split; dataset-level IoU"
+}

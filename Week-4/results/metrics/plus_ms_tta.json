@@ -1,0 +1,20 @@
+{
+  "setting": "plus_ms_tta",
+  "backbone": "DINOv2 ViT-S/14",
+  "input_px": 448,
+  "patch_grid": "32x32",
+  "tta_scales": [
+    336,
+    448,
+    560
+  ],
+  "horizontal_flip": true,
+  "background": 0.9310356985254837,
+  "target_galaxy": 0.5928263723097795,
+  "other_sources": 0.5252217854147334,
+  "mIoU": 0.6830279520833322,
+  "target_IoU": 0.5928263723097795,
+  "n_test": 600,
+  "best_epoch": 19,
+  "best_val_foreground_mean_iou": 0.5576118974676973
+}

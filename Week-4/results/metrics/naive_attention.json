@@ -1,0 +1,12 @@
+{
+  "setting": "naive_attention_week3_dino_s8",
+  "backbone": "DINO ViT-S/8",
+  "input_px": 224,
+  "patch_grid": "28x28",
+  "mIoU": null,
+  "all_source_iou": 0.24480482492096323,
+  "target_IoU": 0.05517552868936851,
+  "threshold_attention_mass": 0.6,
+  "n_test": 600,
+  "note": "Per-head IoUs averaged over six heads and test cutouts; no class output."
+}

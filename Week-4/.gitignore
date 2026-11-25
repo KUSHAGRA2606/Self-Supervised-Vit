@@ -1,0 +1,7 @@
+# Large re-creatable inputs and caches (keep these in persistent Drive storage).
+/data/rgb_images.npy
+/results/predictions/dinov2_s14_224_features_fp16.npy
+/results/predictions/*.pt
+__pycache__/
+/_colab_sample_data/
+/results/predictions/dinov2_s14_224_features_fp16.complete.json

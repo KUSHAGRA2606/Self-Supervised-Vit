@@ -1,0 +1,27 @@
+{
+  "n_images": 3000,
+  "status_counts": {
+    "ok": 3000
+  },
+  "n_valid_masks": 3000,
+  "mask_shape": [
+    3000,
+    160,
+    160
+  ],
+  "classes": {
+    "background": {
+      "pixels": 66843537,
+      "fraction": 0.8703585546875
+    },
+    "target_galaxy": {
+      "pixels": 1498163,
+      "fraction": 0.019507330729166668
+    },
+    "other_sources": {
+      "pixels": 8458300,
+      "fraction": 0.11013411458333333
+    }
+  },
+  "source": "Executed Week4_Pseudo_Labels notebook summary; run notebook output reported 3000/3000 status=ok."
+}

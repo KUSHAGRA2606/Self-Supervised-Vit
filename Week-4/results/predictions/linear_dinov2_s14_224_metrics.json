@@ -1,0 +1,19 @@
+{
+  "setting": "linear_dinov2_s14_224",
+  "backbone": "dinov2_s14",
+  "input_px": 224,
+  "patch_grid": "16x16",
+  "background": 0.9002317220319053,
+  "target_galaxy": 0.5458073231395322,
+  "other_sources": 0.39105589671342517,
+  "mIoU": 0.6123649806282876,
+  "target_IoU": 0.5458073231395322,
+  "best_epoch": 20,
+  "best_val_foreground_mean_iou": 0.45661781210435304,
+  "class_weights": [
+    0.28704240918159485,
+    1.9061493873596191,
+    0.8068082332611084
+  ],
+  "n_test": 600
+}

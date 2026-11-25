@@ -1,0 +1,6 @@
+{
+  "fragmentation": "Some extended sources appear fragmented; the central detected segment is used as the target, while nearby detections are labeled as other sources.",
+  "faint_outskirts": "Faint outer regions are not consistently included, so masks tend to follow brighter detected regions.",
+  "blends_stars": "Bright neighboring sources and blended objects can be labeled as other sources or merge with the target; deblending is imperfect.",
+  "recommended_next_step": "Improve pseudo-label quality and compare against manually reviewed or ground-truth masks, especially for blends and faint outskirts."
+}

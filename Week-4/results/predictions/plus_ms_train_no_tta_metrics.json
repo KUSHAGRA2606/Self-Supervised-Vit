@@ -1,0 +1,19 @@
+{
+  "setting": "plus_ms_train_no_tta",
+  "backbone": "dinov2_s14",
+  "input_px": 448,
+  "patch_grid": "32x32",
+  "background": 0.9201114428076975,
+  "target_galaxy": 0.633016054737285,
+  "other_sources": 0.4947855995602234,
+  "mIoU": 0.6826376990350687,
+  "target_IoU": 0.633016054737285,
+  "best_epoch": 19,
+  "best_val_foreground_mean_iou": 0.5576118974676973,
+  "class_weights": [
+    0.28704240918159485,
+    1.9061493873596191,
+    0.8068082332611084
+  ],
+  "n_test": 600
+}

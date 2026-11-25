@@ -1,0 +1,91 @@
+[
+  {
+    "setting": "naive_attention_week3_dino_s8",
+    "backbone": "DINO ViT-S/8",
+    "input_px": 224,
+    "patch_grid": "28x28",
+    "mIoU": null,
+    "all_source_iou": 0.24480482492096323,
+    "target_IoU": 0.05517552868936851,
+    "threshold_attention_mass": 0.6,
+    "n_test": 600,
+    "note": "Per-head IoUs averaged over six heads and test cutouts; no class output."
+  },
+  {
+    "setting": "linear_dinov2_s14_224",
+    "backbone": "dinov2_s14",
+    "input_px": 224,
+    "patch_grid": "16x16",
+    "background": 0.9002317220319053,
+    "target_galaxy": 0.5458073231395322,
+    "other_sources": 0.39105589671342517,
+    "mIoU": 0.6123649806282876,
+    "target_IoU": 0.5458073231395322,
+    "best_epoch": 20,
+    "best_val_foreground_mean_iou": 0.45661781210435304,
+    "class_weights": [
+      0.28704240918159485,
+      1.9061493873596191,
+      0.8068082332611084
+    ],
+    "n_test": 600
+  },
+  {
+    "setting": "linear_dinov2_s14_448",
+    "backbone": "dinov2_s14",
+    "input_px": 448,
+    "patch_grid": "32x32",
+    "background": 0.9155295118996027,
+    "target_galaxy": 0.584508319100691,
+    "other_sources": 0.445797390918389,
+    "mIoU": 0.648611740639561,
+    "target_IoU": 0.584508319100691,
+    "best_epoch": 20,
+    "best_val_foreground_mean_iou": 0.5105800022743942,
+    "class_weights": [
+      0.28704240918159485,
+      1.9061493873596191,
+      0.8068082332611084
+    ],
+    "n_test": 600
+  },
+  {
+    "setting": "linear_dino_s8_224",
+    "backbone": "dino_s8",
+    "input_px": 224,
+    "patch_grid": "28x28",
+    "background": 0.9153016231437718,
+    "target_galaxy": 0.5995123859130586,
+    "other_sources": 0.4819432598243007,
+    "mIoU": 0.6655857562937103,
+    "target_IoU": 0.5995123859130586,
+    "best_epoch": 12,
+    "best_val_foreground_mean_iou": 0.5263995283827148,
+    "class_weights": [
+      0.28704240918159485,
+      1.9061493873596191,
+      0.8068082332611084
+    ],
+    "n_test": 600
+  },
+  {
+    "setting": "plus_ms_tta",
+    "backbone": "DINOv2 ViT-S/14",
+    "input_px": 448,
+    "patch_grid": "32x32",
+    "tta_scales": [
+      336,
+      448,
+      560
+    ],
+    "horizontal_flip": true,
+    "background": 0.9310356985254837,
+    "target_galaxy": 0.5928263723097795,
+    "other_sources": 0.5252217854147334,
+    "mIoU": 0.6830279520833322,
+    "target_IoU": 0.5928263723097795,
+    "n_test": 600,
+    "best_epoch": 19,
+    "best_val_foreground_mean_iou": 0.5576118974676973
+  }
+]

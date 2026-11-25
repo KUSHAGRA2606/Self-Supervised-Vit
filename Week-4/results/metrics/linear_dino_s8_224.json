@@ -1,0 +1,19 @@
+{
+  "setting": "linear_dino_s8_224",
+  "backbone": "dino_s8",
+  "input_px": 224,
+  "patch_grid": "28x28",
+  "background": 0.9153016231437718,
+  "target_galaxy": 0.5995123859130586,
+  "other_sources": 0.4819432598243007,
+  "mIoU": 0.6655857562937103,
+  "target_IoU": 0.5995123859130586,
+  "best_epoch": 12,
+  "best_val_foreground_mean_iou": 0.5263995283827148,
+  "class_weights": [
+    0.28704240918159485,
+    1.9061493873596191,
+    0.8068082332611084
+  ],
+  "n_test": 600
+}
